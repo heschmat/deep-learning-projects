@@ -14109,7 +14109,7 @@ out = output[:, -1]</code></pre>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Data params</span>
 <span class="c1"># Sequence Length: number of words in a sequence</span>
-<span class="n">sequence_length</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">sequence_length</span> <span class="o">=</span> <span class="mi">13</span>
 <span class="c1"># Batch Size</span>
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">256</span>
 
@@ -14123,12 +14123,12 @@ out = output[:, -1]</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Training parameters</span>
 <span class="c1"># Number of Epochs</span>
-<span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="c1"># Learning Rate</span>
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="o">.</span><span class="mi">0007</span>
 
@@ -14163,20 +14163,7 @@ out = output[:, -1]</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create model and move to gpu if available</span>
@@ -14189,7 +14176,7 @@ out = output[:, -1]</code></pre>
 <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
 
 <span class="c1"># training the model</span>
-<span class="n">trained_rnn</span> <span class="o">=</span> <span class="n">train_rnn</span><span class="p">(</span><span class="n">rnn</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">,</span> <span class="n">print_every</span><span class="o">=</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">trained_rnn</span> <span class="o">=</span> <span class="n">train_rnn</span><span class="p">(</span><span class="n">rnn</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">,</span> <span class="n">print_every</span><span class="o">=</span> <span class="mf">1e3</span><span class="p">)</span>
 
 <span class="c1"># saving the trained model</span>
 <span class="n">helper</span><span class="o">.</span><span class="n">save_model</span><span class="p">(</span><span class="s1">&#39;./save/trained_rnn&#39;</span><span class="p">,</span> <span class="n">trained_rnn</span><span class="p">)</span>
@@ -14210,186 +14197,126 @@ out = output[:, -1]</code></pre>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Training for 15 epoch(s)...
-Epoch:    1/15    Loss: 5.4073
+<pre>Training for 20 epoch(s)...
+Epoch:    1/20    Loss: 5.099
 
-Epoch:    1/15    Loss: 4.8178
+Epoch:    1/20    Loss: 4.6632
 
-Epoch:    1/15    Loss: 4.7564
+Epoch:    1/20    Loss: 4.487
 
-Epoch:    1/15    Loss: 4.6007
+Epoch:    2/20    Loss: 4.3052
 
-Epoch:    1/15    Loss: 4.4713
+Epoch:    2/20    Loss: 4.2106
 
-Epoch:    1/15    Loss: 4.5423
+Epoch:    2/20    Loss: 4.1742
 
-Epoch:    2/15    Loss: 4.3959
+Epoch:    3/20    Loss: 4.0924
 
-Epoch:    2/15    Loss: 4.1762
+Epoch:    3/20    Loss: 4.0497
 
-Epoch:    2/15    Loss: 4.269
+Epoch:    3/20    Loss: 4.0253
 
-Epoch:    2/15    Loss: 4.1901
+Epoch:    4/20    Loss: 3.9655
 
-Epoch:    2/15    Loss: 4.1259
+Epoch:    4/20    Loss: 3.94
 
-Epoch:    2/15    Loss: 4.246
+Epoch:    4/20    Loss: 3.9208
 
-Epoch:    3/15    Loss: 4.1647
+Epoch:    5/20    Loss: 3.8708
 
-Epoch:    3/15    Loss: 3.9924
+Epoch:    5/20    Loss: 3.8545
 
-Epoch:    3/15    Loss: 4.0984
+Epoch:    5/20    Loss: 3.8436
 
-Epoch:    3/15    Loss: 4.03
+Epoch:    6/20    Loss: 3.8
 
-Epoch:    3/15    Loss: 3.9745
+Epoch:    6/20    Loss: 3.788
 
-Epoch:    3/15    Loss: 4.0974
+Epoch:    6/20    Loss: 3.7739
 
-Epoch:    4/15    Loss: 4.0332
+Epoch:    7/20    Loss: 3.7356
 
-Epoch:    4/15    Loss: 3.8773
+Epoch:    7/20    Loss: 3.7275
 
-Epoch:    4/15    Loss: 3.9839
+Epoch:    7/20    Loss: 3.7189
 
-Epoch:    4/15    Loss: 3.9278
+Epoch:    8/20    Loss: 3.6816
 
-Epoch:    4/15    Loss: 3.8745
+Epoch:    8/20    Loss: 3.6764
 
-Epoch:    4/15    Loss: 3.9944
+Epoch:    8/20    Loss: 3.6662
 
-Epoch:    5/15    Loss: 3.9368
+Epoch:    9/20    Loss: 3.6342
 
-Epoch:    5/15    Loss: 3.79
+Epoch:    9/20    Loss: 3.6272
 
-Epoch:    5/15    Loss: 3.901
+Epoch:    9/20    Loss: 3.6205
 
-Epoch:    5/15    Loss: 3.8428
+Epoch:   10/20    Loss: 3.5911
 
-Epoch:    5/15    Loss: 3.7975
+Epoch:   10/20    Loss: 3.5876
 
-Epoch:    5/15    Loss: 3.9176
+Epoch:   10/20    Loss: 3.5806
 
-Epoch:    6/15    Loss: 3.86
+Epoch:   11/20    Loss: 3.55
 
-Epoch:    6/15    Loss: 3.7234
+Epoch:   11/20    Loss: 3.5457
 
-Epoch:    6/15    Loss: 3.8289
+Epoch:   11/20    Loss: 3.5402
 
-Epoch:    6/15    Loss: 3.7726
+Epoch:   12/20    Loss: 3.514
 
-Epoch:    6/15    Loss: 3.7302
+Epoch:   12/20    Loss: 3.5092
 
-Epoch:    6/15    Loss: 3.8531
+Epoch:   12/20    Loss: 3.5057
 
-Epoch:    7/15    Loss: 3.7979
+Epoch:   13/20    Loss: 3.4768
 
-Epoch:    7/15    Loss: 3.6627
+Epoch:   13/20    Loss: 3.476
 
-Epoch:    7/15    Loss: 3.7675
+Epoch:   13/20    Loss: 3.4716
 
-Epoch:    7/15    Loss: 3.719
+Epoch:   14/20    Loss: 3.4469
 
-Epoch:    7/15    Loss: 3.6695
+Epoch:   14/20    Loss: 3.4416
 
-Epoch:    7/15    Loss: 3.7966
+Epoch:   14/20    Loss: 3.4394
 
-Epoch:    8/15    Loss: 3.7428
+Epoch:   15/20    Loss: 3.4177
 
-Epoch:    8/15    Loss: 3.61
+Epoch:   15/20    Loss: 3.4106
 
-Epoch:    8/15    Loss: 3.7111
+Epoch:   15/20    Loss: 3.4117
 
-Epoch:    8/15    Loss: 3.6676
+Epoch:   16/20    Loss: 3.3867
 
-Epoch:    8/15    Loss: 3.6211
+Epoch:   16/20    Loss: 3.3833
 
-Epoch:    8/15    Loss: 3.7421
+Epoch:   16/20    Loss: 3.3833
 
-Epoch:    9/15    Loss: 3.6928
+Epoch:   17/20    Loss: 3.3587
 
-Epoch:    9/15    Loss: 3.5649
+Epoch:   17/20    Loss: 3.3542
 
-Epoch:    9/15    Loss: 3.6629
+Epoch:   17/20    Loss: 3.3556
 
-Epoch:    9/15    Loss: 3.6265
+Epoch:   18/20    Loss: 3.3322
 
-Epoch:    9/15    Loss: 3.5752
+Epoch:   18/20    Loss: 3.328
 
-Epoch:    9/15    Loss: 3.6994
+Epoch:   18/20    Loss: 3.3326
 
-Epoch:   10/15    Loss: 3.6488
+Epoch:   19/20    Loss: 3.3123
 
-Epoch:   10/15    Loss: 3.5268
+Epoch:   19/20    Loss: 3.307
 
-Epoch:   10/15    Loss: 3.6203
+Epoch:   19/20    Loss: 3.3062
 
-Epoch:   10/15    Loss: 3.5785
+Epoch:   20/20    Loss: 3.2884
 
-Epoch:   10/15    Loss: 3.5313
+Epoch:   20/20    Loss: 3.2829
 
-Epoch:   10/15    Loss: 3.6588
-
-Epoch:   11/15    Loss: 3.6067
-
-Epoch:   11/15    Loss: 3.4913
-
-Epoch:   11/15    Loss: 3.5762
-
-Epoch:   11/15    Loss: 3.5409
-
-Epoch:   11/15    Loss: 3.4927
-
-Epoch:   11/15    Loss: 3.6163
-
-Epoch:   12/15    Loss: 3.5661
-
-Epoch:   12/15    Loss: 3.4583
-
-Epoch:   12/15    Loss: 3.5405
-
-Epoch:   12/15    Loss: 3.5067
-
-Epoch:   12/15    Loss: 3.4533
-
-Epoch:   12/15    Loss: 3.5812
-
-Epoch:   13/15    Loss: 3.5346
-
-Epoch:   13/15    Loss: 3.4251
-
-Epoch:   13/15    Loss: 3.5051
-
-Epoch:   13/15    Loss: 3.4753
-
-Epoch:   13/15    Loss: 3.4233
-
-Epoch:   13/15    Loss: 3.5462
-
-Epoch:   14/15    Loss: 3.4997
-
-Epoch:   14/15    Loss: 3.3969
-
-Epoch:   14/15    Loss: 3.4734
-
-Epoch:   14/15    Loss: 3.4463
-
-Epoch:   14/15    Loss: 3.3909
-
-Epoch:   14/15    Loss: 3.5118
-
-Epoch:   15/15    Loss: 3.471
-
-Epoch:   15/15    Loss: 3.3652
-
-Epoch:   15/15    Loss: 3.4438
-
-Epoch:   15/15    Loss: 3.4166
-
-Epoch:   15/15    Loss: 3.3653
-
-Epoch:   15/15    Loss: 3.4817
+Epoch:   20/20    Loss: 3.2834
 
 Model Trained and Saved
 </pre>
@@ -14469,7 +14396,7 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">vocab_to_int</span><span class="p">,</span> <span class="n">int_to_vocab</span><span class="p">,</span> <span class="n">token_dict</span> <span class="o">=</span> <span class="n">helper</span><span class="o">.</span><span class="n">load_preprocess</span><span class="p">()</span>
@@ -14492,7 +14419,7 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">rnn</span><span class="p">,</span> <span class="n">prime_id</span><span class="p">,</span> <span class="n">int_to_vocab</span><span class="p">,</span> <span class="n">token_dict</span><span class="p">,</span> <span class="n">pad_value</span><span class="p">,</span> <span class="n">predict_len</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
@@ -14582,7 +14509,7 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gen_length</span> <span class="o">=</span> <span class="mi">400</span> 
@@ -14624,7 +14551,69 @@ Model Trained and Saved
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>jerry: choate: levels levels &#39;do md waitresses prerequisite unpretentious canasta wings astonishing levels levels dolores smells choate: levels levels dolores [gasps] waiting cancels startled prerequisite lack intimate started rug mannequin andrea perverse cone reckon dunking choate: levels levels dolores [gasps] waiting kaplan startled md ehhh choate: md indigent nnnhhahahahahahahahahahahahahaha waiting &#39;50s waiting cone days choate: levels levels &#39;do quayle intimate tada drugged prerequisite aahhhh astonishing levels levels leaving way choate: levels levels genderson way intimate md hohos briefly cone roomate&#39;s reallllly waiting canasta ping walter choate: md entrate md dion rug sam&#39;s perverse generate choate: levels levels dolores prerequisite waitresses loops lisi: dermatology parrot waiting keys astonishing levels levels genderson tellin notices levels levels leaving [gasps] mistah startled way intimate briefly failure rug mannequin we&#39;ll choate: levels levels dolores prerequisite lack tada md nnnhhahahahahahahahahahahahahaha waiting &#39;50s waiting cone impress astonishing levels levels dolores ticked intimate ticked notices md ehhh choate: levels levels leaving md genre md romances rug mannequin lovin&#39; choate: started dermatology parrot waiting uptight choate: levels levels dolores [gasps] inches highs cone feta startled md ehhh choate: choate: choate: levels levels beth&#39;s [gasps] forthcoming waiting antiques huuuu startled tsh intimate md indigent nnnhhahahahahahahahahahahahahaha waiting ricardo witted perverse store&#39;s intimate fatherless loops unpretentious &#39;50s waiting cone days intimate serenity clogged dermatology waiting yay store&#39;s choate: levels levels dolores md genre prerequisite lisi: dermatology waiting yay daphne rug comics choate: levels levels &#39;do md indigent waitresses quayle choate: levels levels beth&#39;s md waitresses loops heeeey ricardo lazzari choate: levels levels beth&#39;s md lack intimate serenity md indigent lack 400 loops lisi: dermatology waiting singled cone magnus astonishing levels levels genderson tellin intimate briefly rug mannequin gratify choate: levels levels beth&#39;s tellin notices levels levels genderson tellin intimate md indigent nnnhhahahahahahahahahahahahahaha waiting attorney gums cone neo carnival choate: levels levels genderson smells intimate smells intimate smells intimate smells choate: levels levels beth&#39;s [gasps] forthcoming highs moorrrnninng startled md indigent lack tada waiting canasta intimate started place&#39;ll dermatology waiting singled macho choate: levels levels leaving quayle intimate tada drugged &#39;i&#39;m explaination canasta astonishing levels levels leaving ticked intimate ticked choate: started explaination scare slinky parrot choate: levels levels beth&#39;s tellin intimate md lack choate: choate: choate: md indigent lack choate: levels levels leaving md genre prerequisite lisi: dermatology waiting yay store&#39;s choate: levels levels beth&#39;s tellin choate: smells intimate reports fellows choate: levels levels genderson [gasps] waiting cancels startled tsh intimate prerequisite lack
+<pre>jerry: jerrys jerrys lupe: jerrys moussed russel: russel: kelly: kelly: cost us a whole thing.
+
+george: oh! yeah.
+
+george: i think you can get it on a while.
+
+george:(to elaine) hey, you know that guy who has the highest options and the homeless went out with the top, and you can get out of here.
+
+jerry: what is that?
+
+george: oh! i don&#39;t know what it is.
+
+george: well, i think i have a big deal with the rosses.
+
+george:(to george) oh, hi.
+
+kramer: hi.
+
+elaine: hi.
+
+george: hello!
+
+elaine: hi.
+
+kramer: hey! hey, jerry, you got a little shmootz in your building?
+
+jerry: yeah. you can get a call.
+
+george:(to elaine) hey, hey! hey! you know what? it&#39;s not a little problem! you know, you can&#39;t be able to get me a ride, and i can see that.
+
+jerry:(pointing to elaine) oh, hi.
+
+george: hi, elaine.
+
+george:(pointing at the counter) hey, hey, you know, i don&#39;t know what this is. it&#39;s the same way.
+
+george:(confused) oh!
+
+elaine:(pointing to the phone) yeah, i know what you think....
+
+george:(to george) i don&#39;t know.
+
+george: what is it?
+
+hoyt: you know what i&#39;m doing with the wedding?
+
+george: no!
+
+george: it&#39;s a wizard coat.
+
+george: i thought i could have been a little problem here.
+
+jerry: what is this?
+
+jerry: oh, no, no. i can&#39;t believe that.
+
+george: you know, i have no idea that it was a big mistake...
+
+jerry: what are you doing?
+
+jerry: it&#39;s like a little steamy.
+
+george: what
 </pre>
 </div>
 </div>
@@ -14648,10 +14637,10 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gen_length</span> <span class="o">=</span> <span class="mi">200</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gen_length</span> <span class="o">=</span> <span class="mi">1000</span> 
 <span class="n">prime_word</span> <span class="o">=</span> <span class="s1">&#39;elaine&#39;</span> <span class="c1"># name for starting the script</span>
 
 
@@ -14662,7 +14651,6 @@ Model Trained and Saved
                             <span class="n">token_dict</span><span class="p">,</span>
                             <span class="n">vocab_to_int</span><span class="p">[</span><span class="n">pad_word</span><span class="p">],</span>
                             <span class="n">gen_length</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">generated_script</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14684,13 +14672,45 @@ Model Trained and Saved
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">generated_script</span><span class="p">[:</span><span class="mi">400</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
 <div class="output_area">
 
     <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>elaine: choate: levels levels leaving tada astonishing levels levels genderson tellin intimate md lack ohhhh haze md unpretentious canasta prerequisite nnnhhahahahahahahahahahahahahaha waiting singled likely astonishing levels levels leaving ticked notices levels levels dolores prerequisite lack intimate prerequisite dion rug we&#39;ll passion kirk rug mannequin smarter choate: prerequisite nnnhhahahahahahahahahahahahahaha waiting ricardo witted perverse cone reallllly astonishing levels levels leaving smells intimate md hohos briefly rug we&#39;ll passion choate: started explaination &#39;50s waiting cone days choate: levels levels leaving quayle intimate tada canasta prerequisite waitresses astonishing levels levels leaving ticked intimate ticked intimate ticked choate: briefly rug sam&#39;s perverse fresher store&#39;s intimate serenity briefly cone reckon choate: levels levels leaving md waitresses briefly heatbreaker cone reallllly daphne cone magnus notices levels levels leaving prerequisite lack intimate md waitresses started explaination ricardo cone spotting choate: levels levels beth&#39;s md genre slinky romances rug mannequin smarter pony choate: levels levels genderson md ehhh choate: choate: choate: levels levels dolores tada astonishing levels levels dolores way intimate slinky hanaran tests prerequisite unpretentious &#39;50s choate: levels levels beth&#39;s way intimate md ehhh armpit slinky romances rug we&#39;ll dunking choate: levels levels leaving prerequisite lack intimate md romances ``a perverse cone thrills impacted intimate fatherless md romances dermatology
+<pre>elaine: alcove alcove moussed moussed moussed kelly: russel: jerrys russel: a half- hour. i can&#39;t believe this is a real good- man!
+
+kramer: well, i think you&#39;re going down to florida.
+
+george: what are you doing here?
+
+elaine: i think it&#39;s a good thing.
+
+elaine: oh, no, that&#39;s it.
+
+elaine:(confused) you know, i&#39;m sorry, i&#39;m going to go to the hospital, you want to get it in the car?
+
+george: oh!
 </pre>
 </div>
 </div>
@@ -14709,7 +14729,7 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># save script to a text file</span>
