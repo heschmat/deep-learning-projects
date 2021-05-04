@@ -11,3 +11,8 @@ In this project, I'll apply what I've learned about Generative Adversarial Netwo
 
 ## 4. Pneumonia Detection From Chest X-Rays
 In this project, I will analyze __the NIH Chest X-ray Dataset__ and train a CNN to classify a given chest x-ray for the presence or absence of pneumonia. This project will culminate in a model that can predict the presence of pneumonia with human radiologist-level accuracy that can be prepared for submission to the FDA for 510(k) clearance as software as a medical device. Furthermore, I will formally describe my model, the data that it was trained on, and a validation plan that meets FDA criteria.
+
+## 5. Machine Translation
+In this notebook, I explore several recurrent neural network architectures and compare their performance. I will build a deep neural network that functions as part of an end-to-end machine translation pipeline. The completed pipeline will accept English text as input and return the French translation.
+
+
